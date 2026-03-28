@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte a Prueba - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+    <header>
+        <h1>Ponte a Prueba</h1>
+        <p>Demuestra lo que aprendiste sobre Coordenadas y EPSG</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">Volver a la Guia</a>
+
+        <div class="quiz-container">
+            <form id="qgis-quiz">
+                
+                <div class="question-block">
+                    <h3>1. ¿Que unidad de medida utiliza el Sistema Geografico (3D)?</h3>
+                    <label><input type="radio" name="q1" value="a"> Metros</label>
+                    <label><input type="radio" name="q1" value="b"> Grados (Latitud y Longitud)</label>
+                    <label><input type="radio" name="q1" value="c"> Kilometros</label>
+                </div>
+
+                <div class="question-block">
+                    <h3>2. Si estas trabajando en un mapa para una pagina web como Google Maps, ¿Que codigo EPSG es el estandar?</h3>
+                    <label><input type="radio" name="q2" value="a"> EPSG: 4326</label>
+                    <label><input type="radio" name="q2" value="b"> Zonas UTM Locales</label>
+                    <label><input type="radio" name="q2" value="c"> EPSG: 3857</label>
+                </div>
+
+                <div class="question-block">
+                    <h3>3. Segun la regla de oro, ¿Que debes hacer con el CRS de la Capa al cargar un archivo nuevo?</h3>
+                    <label><input type="radio" name="q3" value="a"> Cambiarlo inmediatamente al CRS de mi proyecto.</label>
+                    <label><input type="radio" name="q3" value="b"> No cambiarlo a menos que sepa que esta mal asignado.</label>
+                    <label><input type="radio" name="q3" value="c"> Borrarlo para que QGIS lo adivine.</label>
+                </div>
+
+                <div class="question-block">
+                    <h3>4. ¿Para que sirve el codigo EPSG: 4326 (WGS84)?</h3>
+                    <label><input type="radio" name="q4" value="a"> Para ubicar puntos con GPS en cualquier parte del planeta.</label>
+                    <label><input type="radio" name="q4" value="b"> Para medir el area exacta de un municipio en metros.</label>
+                    <label><input type="radio" name="q4" value="c"> Exclusivamente para proyectos en Mexico.</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Calificar Cuestionario</button>
+            </form>
+
+            <div id="quiz-result" class="result-box hidden">
+                <h2 id="score-text"></h2>
+                <p id="feedback-text"></p>
+                <button type="button" id="btn-retry" class="btn-retry">Intentar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>

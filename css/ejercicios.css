@@ -1,0 +1,114 @@
+/* --- Navegación --- */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--qgis-green);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--qgis-green);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: var(--qgis-green);
+    color: var(--white);
+}
+
+/* --- Sección de Descarga --- */
+.download-section {
+    background-color: #e8f4f0;
+    border: 2px dashed var(--qgis-green);
+    border-radius: 8px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.download-section h2 {
+    color: var(--qgis-dark);
+    margin-bottom: 1rem;
+}
+
+.btn-download {
+    display: inline-block;
+    background-color: var(--qgis-dark);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--qgis-green);
+    transform: translateY(-2px);
+}
+
+.note {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+/* --- Tarjetas de Ejercicios --- */
+.exercise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.exercise-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--qgis-dark);
+}
+
+.exercise-card h3 {
+    color: var(--qgis-green);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.exercise-card p {
+    margin-bottom: 1rem;
+    color: var(--qgis-dark);
+}
+
+.exercise-card ol {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+.exercise-card li {
+    margin-bottom: 0.8rem;
+    color: #34495e;
+}
+
+.exercise-card code {
+    background-color: #f1f2f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: #e74c3c;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* --- Ajustes para móviles --- */
+@media (max-width: 600px) {
+    .download-section {
+        padding: 1.5rem;
+    }
+    .exercise-card {
+        padding: 1.5rem;
+    }
+}

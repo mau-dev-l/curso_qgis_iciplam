@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas y Coordenadas en QGIS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mapas y Coordenadas en QGIS</h1>
+        <p>Una guía amigable para entender sistemas de coordenadas, proyecciones y códigos EPSG sin perderse en el intento.</p>
+    </header>
+
+    <div class="container">
+        
+        <section style="text-align: center; margin-bottom: 3rem; background-color: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--qgis-green);">
+            <h2 class="section-title" style="border: none; margin-top: 0; padding-bottom: 0;">¿Qué es un SIG?</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--qgis-dark);">Antes de hablar de proyecciones y códigos EPSG, descubre cómo los Sistemas de Información Geográfica transforman el mundo real a través de los datos.</p>
+            <a href="introduccion.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto; background-color: var(--qgis-green);">Ir a la Introducción Teórica</a>
+        </section>
+
+        <section style="text-align: center; margin-bottom: 3rem; background-color: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--qgis-dark);">
+            <h2 class="section-title" style="border: none; margin-top: 0; padding-bottom: 0;">Día 2: El Lenguaje de la Ingeniería</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--qgis-dark);">Descubre la diferencia entre modelos vectoriales y ráster, y aprende a organizar ortofotos, curvas de nivel y polígonos.</p>
+            <a href="dia2.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto; background-color: var(--qgis-dark); color: var(--white); padding: 1rem 2rem; border-radius: 4px; font-weight: bold;">Ver Lección del Día 2</a>
+        </section>
+
+        <section>
+            <h2 class="section-title">Los Dos Idiomas de los Mapas</h2>
+            <p class="section-desc">El reto cartográfico es pasar los datos del mundo real a tu pantalla sin que todo se deforme.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title-green">Sistema Geográfico (3D)</h3>
+                    <ul class="card-list">
+                        <li><strong>Forma:</strong> Esfera / Elipsoide.</li>
+                        <li><strong>Unidad:</strong> Grados, Latitud y Longitud.</li>
+                        <li><strong>Uso ideal:</strong> Ubicación global (GPS).</li>
+                        <li><strong>Limitación:</strong> Malo para medir distancias precisas.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="card-title-green">Sistema Proyectado (2D)</h3>
+                    <ul class="card-list">
+                        <li><strong>Forma:</strong> Plano (Superficie 2D).</li>
+                        <li><strong>Unidad:</strong> Metros (m), Coordenadas X e Y.</li>
+                        <li><strong>Uso ideal:</strong> Mapas locales, calcular áreas y medir distancias exactas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <figure class="demo-image-full">
+                <img src="img/barra_estado.png" alt="Ejemplo de barra de estado de QGIS mostrando el EPSG:4326" class="qgis-screenshot-focused">
+                <figcaption>Imagen 1: La barra de estado en la parte inferior de QGIS. El indicador resaltado (EPSG:4326) te dice qué sistema de coordenadas está usando el Proyecto en este momento.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2 class="section-title">Tu Kit de Inicio: Los Códigos que Debes Conocer</h2>
+            <p class="section-desc">Cada sistema de coordenadas en el mundo tiene un Número de Identificación Único (Código EPSG). Toca las tarjetas para descubrir los más importantes:</p>
+            
+            <div class="grid-3">
+                <div class="interactive-card" onclick="toggleCard(this)">
+                    <h3>EPSG: 4326</h3>
+                    <p class="hint">Toca para revelar</p>
+                    <div class="hidden-content">
+                        <p><strong>El Rey Global.</strong> Usa grados (lat/long). Perfecto para ubicar puntos con GPS en cualquier parte del planeta.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-card" onclick="toggleCard(this)">
+                    <h3>EPSG: 3857</h3>
+                    <p class="hint">Toca para revelar</p>
+                    <div class="hidden-content">
+                        <p><strong>El Estándar Web.</strong> Usa metros. Es el sistema que utilizan Google Maps, OpenStreetMap y casi todos los mapas en internet.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-card" onclick="toggleCard(this)">
+                    <h3>Zonas UTM Locales</h3>
+                    <p class="hint">Toca para revelar</p>
+                    <div class="hidden-content">
+                        <p><strong>La Lupa Local.</strong> Usan metros. Son 'tiras' o franjas específicas del mundo para trabajar con máxima precisión en tu país o región.</p>
+                    </div>
+                </div>
+            </div>
+
+            <figure class="demo-image-full">
+                <img src="img/propiedades_proyecto.png" alt="Ejemplo de búsqueda de EPSG en propiedades del proyecto de QGIS" class="qgis-screenshot-focused">
+                <figcaption>Imagen 2: El diálogo de propiedades del proyecto. Aquí es donde buscas y seleccionas el código EPSG correcto para tu área de estudio, como las zonas UTM locales.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2 class="section-title">La Regla de Oro en QGIS: Proyecto vs. Capas</h2>
+            <div class="grid-2">
+                <div class="card card-warning">
+                    <h3>El CRS de la Capa</h3>
+                    <p class="mt-1">Es el sistema en el que fueron guardados tus datos originalmente. QGIS lo lee automáticamente.</p>
+                    <p class="warning-text">No lo cambies a menos que sepas que está mal.</p>
+                    <figure class="demo-image-card mt-1">
+                        <img src="img/propiedades_capa.png" alt="Imagen de propiedades de capa en QGIS mostrando el CRS de la capa" class="qgis-screenshot-card">
+                        <figcaption>Dónde verificar el CRS de la capa desde sus propiedades.</figcaption>
+                    </figure>
+                </div>
+                <div class="card card-info">
+                    <h3>El CRS del Proyecto</h3>
+                    <p class="mt-1">Es cómo quieres ver y medir todo en tu pantalla en este momento.</p>
+                    <p class="info-text">Puedes cambiarlo en la esquina inferior derecha cuantas veces quieras sin dañar tus archivos originales.</p>
+                    <figure class="demo-image-card mt-1">
+                        <img src="img/esquina_inferior.png" alt="Esquina inferior derecha de QGIS para cambiar CRS" class="qgis-screenshot-card">
+                        <figcaption>Haz clic en este indicador para ajustarlo.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">4 Hábitos Cartográficos Saludables</h2>
+            
+            <button class="accordion">1. Conoce tu EPSG local</button>
+            <div class="panel">
+                <p>Averigua qué código EPSG (UTM o sistema nacional) se usa oficialmente en tu país o área de estudio.</p>
+            </div>
+
+            <button class="accordion">2. Mide en metros</button>
+            <div class="panel">
+                <p>Si necesitas calcular áreas o distancias, asegúrate de que tu Proyecto esté en un Sistema Proyectado, no en grados.</p>
+            </div>
+
+            <button class="accordion">3. Confía en QGIS</button>
+            <div class="panel">
+                <p>Deja que el software asigne automáticamente el CRS a las capas que importas. No lo fuerces.</p>
+            </div>
+
+            <button class="accordion">4. Usa el botón mágico</button>
+            <div class="panel">
+                <p>Haz clic derecho en tu capa principal y usa 'Establecer CRS del Proyecto desde Capa' para alinear tu lienzo rápidamente.</p>
+                <figure class="demo-image-full">
+                    <img src="img/set_crs.png" alt="Imagen del menú contextual para establecer CRS del proyecto desde capa en QGIS" class="qgis-screenshot-focused">
+                    <figcaption>Imagen 3: Cómo acceder rápidamente a la función 'Set Project CRS from Layer' desde el panel de capas.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+            <h2 class="section-title" style="border: none;">Hora de la Práctica</h2>
+            <p style="margin-bottom: 2rem;">Descarga los datos de trabajo y acompáñame en los ejercicios guiados dentro de QGIS.</p>
+            <a href="ejercicios.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto; background-color: var(--qgis-dark);">Ir al Laboratorio de Ejercicios</a>
+        </section>
+
+        <section style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="section-title" style="border: none;">¿Listo para comprobar lo aprendido?</h2>
+            <p style="margin-bottom: 2rem;">Realiza un breve ejercicio para poner a prueba tus conocimientos sobre QGIS y EPSG.</p>
+            <a href="quiz.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto;">Ir al Cuestionario Interactivo</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Desarrollado para el curso de QGIS - Ingeniería Civil UNACH</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

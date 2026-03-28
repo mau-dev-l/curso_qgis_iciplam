@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Prácticos - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ejercicios.css">
+</head>
+<body>
+
+    <header>
+        <h1>Laboratorio de Coordenadas</h1>
+        <p>Ejercicios prácticos y material de descarga para la sesión en QGIS</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">Volver a la Guía Principal</a>
+
+        <section class="download-section">
+            <h2>Material de Trabajo</h2>
+            <p>Descarga el archivo Shapefile de los límites municipales de Chiapas. Lo utilizaremos para resolver los ejercicios de esta sesión.</p>
+            <a href="data/MUNICIPIOS_2025 (1).zip" download class="btn-download">
+                Descargar Shapefile (.zip)
+            </a>
+            <p class="note">Nota: Recuerda extraer (descomprimir) el contenido del archivo .zip en una carpeta de tu computadora antes de arrastrarlo a QGIS.</p>
+        </section>
+
+        <section class="exercise-grid">
+            
+            <div class="exercise-card">
+                <h3>Ejercicio 1: El efecto de la proyección</h3>
+                <p><strong>Objetivo:</strong> Visualizar cómo QGIS adapta los datos en la pantalla sin modificar el archivo original.</p>
+                <ol>
+                    <li>Abre QGIS y arrastra el archivo <code>.shp</code> de los municipios de Chiapas.</li>
+                    <li>Verifica en la esquina inferior derecha que el indicador muestre <strong>EPSG:4326</strong>.</li>
+                    <li>Abre las Propiedades del Proyecto (esquina inferior derecha) y cambia el CRS a <strong>EPSG:3857</strong> (Pseudo-Mercator). Aplica los cambios y observa cómo se deforma el mapa.</li>
+                    <li>Vuelve a cambiar el CRS del Proyecto, esta vez a la zona UTM local correspondiente a Chiapas (ej. <strong>EPSG:32615</strong>).</li>
+                </ol>
+            </div>
+
+            <div class="exercise-card">
+                <h3>Ejercicio 2: El problema de medir en grados</h3>
+                <p><strong>Objetivo:</strong> Comprender por qué los proyectos de ingeniería civil exigen Sistemas Proyectados.</p>
+                <ol>
+                    <li>Regresa el CRS de tu Proyecto a <strong>EPSG:4326</strong>.</li>
+                    <li>Selecciona la herramienta de 'Medir Área' en la barra superior de QGIS.</li>
+                    <li>Dibuja un polígono aproximado sobre el municipio de Tuxtla Gutiérrez. Nota que las unidades de medida son confusas o inviables para cuantificación.</li>
+                    <li>Cambia el CRS del Proyecto a tu zona UTM local (metros) y repite la medición. Verifica el resultado en metros cuadrados o hectáreas.</li>
+                </ol>
+            </div>
+
+            <div class="exercise-card">
+                <h3>Ejercicio 3: Aplicando la Regla de Oro</h3>
+                <p><strong>Objetivo:</strong> Solucionar errores de ubicación alineando correctamente el proyecto con la capa.</p>
+                <ol>
+                    <li>Cierra QGIS y no guardes el proyecto.</li>
+                    <li>En tu explorador de archivos, entra a la carpeta donde descomprimiste los municipios y elimina intencionalmente el archivo que termina en <code>.prj</code>.</li>
+                    <li>Abre QGIS nuevamente y carga el archivo <code>.shp</code>. Notarás que aparece un icono de interrogación indicando un CRS desconocido.</li>
+                    <li>Haz doble clic en la capa, ve a 'Información' y asígnale manualmente el EPSG correcto (asumiendo que sabemos que originalmente era 4326).</li>
+                    <li>Haz clic derecho sobre la capa y selecciona <strong>Establecer CRS del Proyecto desde Capa</strong>.</li>
+                </ol>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <p>Desarrollado para el curso de QGIS - Ingeniería Civil UNACH</p>
+    </footer>
+
+</body>
+</html>

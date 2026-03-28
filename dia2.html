@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 2: Vector vs Ráster - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Día 2: El Lenguaje de la Ingeniería</h1>
+        <p>Diferenciación y carga de insumos de alta precisión: Modelos Vectoriales y Ráster.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back" style="display: inline-block; margin-bottom: 2rem; color: var(--qgis-green); text-decoration: none; font-weight: bold; border: 1px solid var(--qgis-green); padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;">Volver a la Guía Principal</a>
+
+        <section>
+            <h2 class="section-title">Los Dos Modelos de Datos Geoespaciales</h2>
+            <p class="section-desc">En la ingeniería civil y geomática, representamos la realidad en la computadora utilizando dos estructuras de datos principales. Cada una tiene un propósito específico.</p>
+            
+            <div class="grid-2">
+                <div class="card card-info">
+                    <h3 class="card-title-green">Modelos Ráster</h3>
+                    <p class="mt-1">Representan el mundo a través de una cuadrícula regular de píxeles o celdas. Cada celda contiene un valor numérico.</p>
+                    <ul class="card-list">
+                        <li><strong>Ortofotos de Dron:</strong> Imágenes aéreas de altísima resolución corregidas geométricamente. Cada píxel representa un color.</li>
+                        <li><strong>Modelos Digitales de Elevación (MDE):</strong> Cuadrículas donde cada píxel almacena el valor de la altitud del terreno. Vitales para hidrología y cálculo de pendientes.</li>
+                    </ul>
+                </div>
+                <div class="card card-warning">
+                    <h3 class="card-title-green">Modelos Vectoriales</h3>
+                    <p class="mt-1">Utilizan geometría matemática (coordenadas X, Y) para definir formas discretas con límites exactos.</p>
+                    <ul class="card-list">
+                        <li><strong>Puntos:</strong> Postes de luz, pozos de visita, árboles.</li>
+                        <li><strong>Líneas (Curvas de Nivel):</strong> Representación del relieve, ejes de trazo carretero, tuberías.</li>
+                        <li><strong>Polígonos (Manzanas):</strong> Límites prediales, áreas de construcción, zonas de inundación.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">La Regla de Oro: Jerarquía de Capas</h2>
+            <p class="section-desc">El Panel de Capas en QGIS funciona como una pila de acetatos transparentes. Lo que está arriba en la lista, se dibuja por encima en el mapa. Para evitar que las capas sólidas oculten a las más pequeñas, siempre debes aplicar el siguiente <strong>Principio de Superposición</strong> de arriba hacia abajo:</p>
+            
+            <div style="background-color: var(--white); border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--qgis-dark); margin-top: 1.5rem;">
+                <ol style="margin-left: 1.5rem; font-size: 1.2rem; line-height: 2;">
+                    <li><strong style="color: var(--qgis-dark);">Puntos:</strong> Siempre en la cima. Al ser los elementos más pequeños, si los pones debajo de un polígono, desaparecerán.</li>
+                    <li><strong style="color: var(--qgis-green);">Líneas:</strong> En segundo lugar. Curvas de nivel, ríos o vialidades dibujadas sobre las áreas.</li>
+                    <li><strong style="color: #f39c12;">Polígonos:</strong> En tercer lugar. Manzanas, predios o zonas de estudio. Al tener relleno, cubren lo que está debajo (se sugiere darles transparencia).</li>
+                    <li><strong style="color: #3498db;">Ráster:</strong> Siempre en el fondo. Ortofotos y MDE son imágenes continuas sin huecos; si las pones arriba, taparán absolutamente todo el proyecto.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+            <p style="margin-bottom: 2rem; font-size: 1.2rem; font-weight: bold; color: var(--qgis-dark);">¿Listo para poner en práctica la teoría de vectores y ráster?</p>
+            <a href="ejercicios.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto; background-color: var(--qgis-dark); color: var(--white); padding: 1rem 2rem; font-size: 1.1rem; border-radius: 4px; font-weight: bold;">Ir al Laboratorio de Ejercicios</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Desarrollado para el curso de QGIS - Ingeniería Civil UNACH</p>
+    </footer>
+
+</body>
+</html>

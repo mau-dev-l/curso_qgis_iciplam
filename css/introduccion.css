@@ -1,0 +1,57 @@
+/* --- Estilos específicos para el módulo de Introducción --- */
+
+.btn-back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--qgis-green);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--qgis-green);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: var(--qgis-green);
+    color: var(--white);
+}
+
+.intro-card {
+    border-top: 4px solid var(--qgis-green);
+    border-left: none;
+    text-align: center;
+}
+
+.sig-definition {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid #3498db;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    transition: background-color 0.3s ease;
+}
+
+.sig-definition.highlight {
+    background-color: #e8f4f0;
+    border-left-color: var(--qgis-green);
+}
+
+.pillar-card {
+    padding: 1.5rem 1rem;
+}
+
+.pillar-card h3 {
+    color: var(--qgis-green);
+    margin-bottom: 1rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+    .sig-definition {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+}

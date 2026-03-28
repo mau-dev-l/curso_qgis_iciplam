@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a los SIG - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/introduccion.css">
+</head>
+<body>
+
+    <header>
+        <h1>Descubriendo los SIG</h1>
+        <p>El Mundo a través de los Datos: Una introducción visual a los Sistemas de Información Geográfica.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">Ir a la Guía Principal de Coordenadas</a>
+
+        <section>
+            <h2 class="section-title">La Evolución del Mapa</h2>
+            
+            <figure class="demo-image-full mt-1 mb-2">
+                <img src="img/evolucion_mapa.png" alt="Diagrama de comparación entre mapa tradicional y mapa como interfaz interactiva" class="qgis-screenshot-focused">
+                <figcaption>Imagen Concepto: Un mapa dinámico es una ventana interactiva conectada a bases de datos infinitas.</figcaption>
+            </figure>
+            
+            <div class="grid-2">
+                <div class="card intro-card">
+                    <h3 class="card-title-green">El Mapa Tradicional</h3>
+                    <p class="mt-1">Es estático y solo visual. El lector debe deducir las relaciones por sí mismo.</p>
+                </div>
+                <div class="card intro-card">
+                    <h3 class="card-title-green">El Mapa como Interfaz</h3>
+                    <p class="mt-1">Es dinámico, interactivo y está conectado a bases de datos infinitas. Un mapa ya no es solo un dibujo; es una ventana interactiva hacia los datos del mundo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">¿Qué es exactamente un SIG?</h2>
+            
+            <figure class="demo-image-full mt-1 mb-2">
+                <img src="img/definicion_sig.png" alt="Diagrama conceptual mostrando la unión de Geografía y Base de Datos en un SIG" class="qgis-screenshot-focused">
+                <figcaption>Imagen Concepto: Un SIG captura, almacena, analiza y muestra información georreferenciada. Une la Geografía (coordenadas, ubicación, geometría) con una Base de Datos (atributos, tablas, números).</figcaption>
+            </figure>
+            
+            <div class="sig-definition" id="interactive-definition">
+                <p>Un SIG captura, almacena, analiza y muestra información georreferenciada. Une la <strong>Geografía</strong> (coordenadas, ubicación, geometría) con una <strong>Base de Datos</strong> (atributos, tablas, números).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Los 5 Pilares del Ecosistema SIG</h2>
+            
+            <figure class="demo-image-full mt-1 mb-2">
+                <img src="img/cinco_pilares.png" alt="Diagrama de los 5 pilares del ecosistema SIG interconectados en un ciclo" class="qgis-screenshot-focused">
+                <figcaption>Imagen Concepto: El ecosistema SIG requiere de Hardware, Software, Datos, Procesos y, lo más importante, el Equipo Humano para funcionar.</figcaption>
+            </figure>
+            
+            <div class="grid-3">
+                <div class="interactive-card pillar-card">
+                    <h3>Hardware</h3>
+                    <p>Capacidad de procesamiento y visualización.</p>
+                </div>
+                <div class="interactive-card pillar-card">
+                    <h3>Software</h3>
+                    <p>El motor de análisis y dibujo.</p>
+                </div>
+                <div class="interactive-card pillar-card">
+                    <h3>Datos</h3>
+                    <p>La materia prima (coordenadas e imágenes).</p>
+                </div>
+                <div class="interactive-card pillar-card">
+                    <h3>Procesos</h3>
+                    <p>Las reglas y metodologías de negocio.</p>
+                </div>
+                <div class="interactive-card pillar-card">
+                    <h3>Equipo Humano</h3>
+                    <p>Los analistas que formulan las preguntas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">El secreto del SIG: Las Capas Temáticas</h2>
+            <div class="card card-info">
+                <p>Los SIG organizan la realidad en diferentes capas de información, por ejemplo:</p>
+                
+                <figure class="demo-image-full mt-2">
+                    <img src="img/sig_stack.png" alt="Diagrama de capas temáticas SIG que muestra la pila de datos" class="qgis-screenshot-focused">
+                    <figcaption>Imagen Concepto: Una pila de datos apilados. Una coordenada (X,Y) atraviesa todas estas capas: ortofoto, catastro, infraestructuras, y relieve simultáneamente.</figcaption>
+                </figure>
+                
+                <ul class="card-list">
+                    <li><strong>Elevación (MDT):</strong> Relieve y altitud.</li>
+                    <li><strong>Usos de Suelo:</strong> Cobertura vegetal, zonas urbanas.</li>
+                    <li><strong>Imagen Base / Satélite:</strong> La realidad fotográfica.</li>
+                </ul>
+                <p class="info-text mt-1">Un Punto, Múltiples Dimensiones.</p>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+            <p style="margin-bottom: 2rem; font-size: 1.2rem; font-weight: bold; color: var(--qgis-dark);">Ahora que conoces qué es un SIG, es momento de aprender cómo se ubican los datos en el espacio.</p>
+            <a href="index.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto;">Continuar a: Mapas y Coordenadas</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Desarrollado para el curso de QGIS - Ingeniería Civil UNACH</p>
+    </footer>
+
+    <script src="js/introduccion.js"></script>
+</body>
+</html>
