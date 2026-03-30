@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 3: Atributos y Simbología Técnica - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+    <header>
+        <h1>Día 3: Atributos y Simbología Técnica</h1>
+        <p>Transformación de datos abstractos en visualizaciones de ingeniería.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back" style="display: inline-block; margin-bottom: 2rem; color: var(--qgis-green); text-decoration: none; font-weight: bold; border: 1px solid var(--qgis-green); padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;">Volver a la Guía Principal</a>
+
+        <section>
+            <h2 class="section-title">1. La Tabla de Atributos: El cerebro del mapa</h2>
+            <p class="section-desc">La geometría (puntos, líneas o polígonos) es solo la mitad de la historia. El verdadero valor para la ingeniería reside en la base de datos que respalda cada objeto espacial.</p>
+            
+            <div class="card card-info">
+                <p class="mt-1">Al hacer clic derecho sobre una capa y seleccionar <strong>Abrir tabla de atributos</strong>, accedemos a la matriz de datos. Cada fila corresponde a un elemento en el mapa (ej. un tramo de tubería) y cada columna representa una variable (ej. diámetro, material, año de instalación).</p>
+                
+                <figure class="demo-image-card mt-1">
+                    <img src="img/dia3_tabla_atributos.png" alt="Captura de la tabla de atributos en QGIS" class="qgis-screenshot-card" style="max-height: 350px; object-fit: cover; width: 100%;">
+                    <figcaption>Consulta de la base de datos detrás de los objetos espaciales.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">2. Simbología Categorizada: Clasificando cualidades</h2>
+            <p class="section-desc">Utilizamos este tipo de simbología cuando queremos diferenciar elementos del mapa basándonos en datos cualitativos (texto o categorías sin orden numérico).</p>
+            
+            <div class="card card-warning">
+                <p class="mt-1">Es ideal para crear mapas de <strong>usos de suelo</strong> (comercial, residencial, industrial) o para clasificar infraestructuras por <strong>tipo de material</strong> (tuberías de PVC, PEAD, Acero). A cada categoría se le asigna un color distinto para facilitar su lectura rápida.</p>
+                
+                <figure class="demo-image-card mt-1">
+                    <img src="img/dia3_simbologia_categorizada.png" alt="Captura de simbología categorizada en QGIS" class="qgis-screenshot-card" style="max-height: 350px; object-fit: cover; width: 100%;">
+                    <figcaption>Estilo de capa aplicado por categorías de material o uso.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">3. Simbología Graduada: Análisis cuantitativo</h2>
+            <p class="section-desc">A diferencia de la categorizada, la simbología graduada se utiliza estrictamente para datos numéricos (cuantitativos), agrupándolos en rangos.</p>
+            
+            <div class="card" style="border-left-color: var(--qgis-dark);">
+                <p class="mt-1">Esta herramienta es fundamental para generar <strong>mapas de análisis numéricos</strong>. Se aplica un gradiente de color (por ejemplo, de azul claro a azul oscuro) para representar intensidades, como la densidad de población en manzanas, rangos de elevación, o la capacidad de flujo en redes de agua potable.</p>
+                
+                <figure class="demo-image-card mt-1">
+                    <img src="img/dia3_simbologia_graduada.png" alt="Captura de simbología graduada en QGIS" class="qgis-screenshot-card" style="max-height: 350px; object-fit: cover; width: 100%;">
+                    <figcaption>Representación visual mediante rangos numéricos y rampas de color.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+            <p style="margin-bottom: 2rem; font-size: 1.2rem; font-weight: bold; color: var(--qgis-dark);">Es hora de clasificar nuestros propios datos en el laboratorio.</p>
+            <a href="ejercicios.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto; background-color: var(--qgis-dark); color: var(--white); padding: 1rem 2rem; border-radius: 4px; font-weight: bold;">Ir al Laboratorio de Ejercicios</a>
+        </section>
+
+        <section style="margin-top: 5rem; margin-bottom: 3rem;">
+            <h2 class="section-title" style="text-align: center; border: none;">Test Rápido: Día 3</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Comprueba si puedes diferenciar cuándo usar cada tipo de simbología.</p>
+            
+            <div class="quiz-container">
+                <form id="dia3-quiz">
+                    
+                    <div class="question-block">
+                        <h3>1. ¿Qué información nos muestra la Tabla de Atributos de una capa vectorial?</h3>
+                        <label><input type="radio" name="q1" value="a"> Exclusivamente las coordenadas X e Y de los objetos.</label>
+                        <label><input type="radio" name="q1" value="b"> La base de datos asociada a cada objeto espacial (variables cualitativas y cuantitativas).</label>
+                        <label><input type="radio" name="q1" value="c"> La paleta de colores que estamos usando en ese momento.</label>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>2. Si necesitas colorear un mapa de la red de agua potable indicando si la tubería es de "PVC", "Acero" o "Asbesto", ¿qué simbología utilizas?</h3>
+                        <label><input type="radio" name="q2" value="a"> Simbología Graduada</label>
+                        <label><input type="radio" name="q2" value="b"> Símbolo Único</label>
+                        <label><input type="radio" name="q2" value="c"> Simbología Categorizada</label>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>3. ¿Para qué tipo de datos está diseñada estrictamente la Simbología Graduada?</h3>
+                        <label><input type="radio" name="q3" value="a"> Datos cualitativos (textos descriptivos).</label>
+                        <label><input type="radio" name="q3" value="b"> Datos cuantitativos (números que se pueden agrupar en rangos).</label>
+                        <label><input type="radio" name="q3" value="c"> Nombres de municipios o colonias.</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Calificar Repaso</button>
+                </form>
+
+                <div id="quiz-result" class="result-box hidden">
+                    <h2 id="score-text"></h2>
+                    <p id="feedback-text"></p>
+                    <button type="button" id="btn-retry" class="btn-retry">Intentar de nuevo</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Desarrollado para el curso de QGIS - Ingeniería Civil UNACH</p>
+    </footer>
+
+    <script src="js/dia3_quiz.js"></script>
+</body>
+</html>

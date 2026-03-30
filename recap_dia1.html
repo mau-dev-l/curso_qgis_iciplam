@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recapitulación Día 1 - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+    <header>
+        <h1>Recapitulación: Día 1</h1>
+        <p>Repaso de las fuentes de datos oficiales, filtros de atributos y modelos espaciales.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back">Volver a la Guía Principal</a>
+
+        <section>
+            <h2 class="section-title">Resumen de la Sesión Anterior</h2>
+            <div class="grid-2">
+                
+                <div class="card card-info">
+                    <h3 class="card-title-green">1. Datos Oficiales y EPSG</h3>
+                    <p class="mt-1">Descargamos el Marco Geoestadístico desde el portal del INEGI para trabajar con límites oficiales. Para asegurar la precisión métrica en nuestra región, configuramos nuestro proyecto con el código correspondiente a Chiapas: <strong>EPSG: 32615 (UTM Zona 15N)</strong>.</p>
+                    
+                    <figure class="demo-image-card mt-1">
+                        <img src="img/recap_epsg.png" alt="Captura de la configuración del EPSG 32615 en QGIS" class="qgis-screenshot-card">
+                        <figcaption>Asignación del sistema de coordenadas del proyecto.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="card card-warning">
+                    <h3 class="card-title-green">2. Filtro de Atributos</h3>
+                    <p class="mt-1">Para no sobrecargar el sistema con las manzanas de todo el estado, utilizamos la tabla de atributos para aislar nuestra área de interés mediante la siguiente sentencia SQL:</p>
+                    <p style="background-color: #f4f7f6; padding: 10px; margin-top: 10px; font-family: monospace; font-weight: bold; border-left: 4px solid var(--qgis-green);">"CVE_MUN" = '101'</p>
+                    
+                    <figure class="demo-image-card mt-1">
+                        <img src="img/recap_filtro.png" alt="Captura del filtro de atributos en QGIS" class="qgis-screenshot-card">
+                        <figcaption>Aislando Tuxtla Gutiérrez desde la tabla de atributos.</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+            
+            <div class="card mt-2" style="border-left-color: var(--qgis-dark);">
+                <h3 class="card-title-green">3. Vectores y Ráster en la Práctica</h3>
+                <p class="mt-1">Cargamos y diferenciamos los insumos base para ingeniería:</p>
+                <ul class="card-list">
+                    <li><strong>Vectores:</strong> Trabajamos con polígonos (manzanas) y líneas (curvas de nivel).</li>
+                    <li><strong>Ráster:</strong> Integramos productos de alta precisión generados por vuelo con dron: una Ortofoto y un Modelo Digital de Elevaciones (MDE).</li>
+                </ul>
+
+                <figure class="demo-image-card mt-1">
+                    <img src="img/recap_capas.png" alt="Captura de las capas ráster y vectoriales superpuestas en QGIS" class="qgis-screenshot-card" style="max-height: 400px; object-fit: cover; width: 100%;">
+                    <figcaption>Visualización conjunta de ortofoto, MDE y capas vectoriales.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section style="margin-top: 4rem;">
+            <h2 class="section-title" style="text-align: center; border: none;">Test Rápido de Repaso</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Demuestra que dominas los conceptos clave del Día 1.</p>
+            
+            <div class="quiz-container">
+                <form id="recap-quiz">
+                    
+                    <div class="question-block">
+                        <h3>1. ¿Cuál es el código EPSG que utilizamos para proyectar nuestro trabajo en Chiapas en metros?</h3>
+                        <label><input type="radio" name="q1" value="a"> EPSG: 4326</label>
+                        <label><input type="radio" name="q1" value="b"> EPSG: 3857</label>
+                        <label><input type="radio" name="q1" value="c"> EPSG: 32615</label>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>2. ¿Qué herramienta o sentencia usamos para aislar las manzanas de Tuxtla Gutiérrez del resto del estado?</h3>
+                        <label><input type="radio" name="q2" value="a"> Un filtro por atributos usando "CVE_MUN" = '101'</label>
+                        <label><input type="radio" name="q2" value="b"> Borrando los demás municipios manualmente</label>
+                        <label><input type="radio" name="q2" value="c"> Cambiando el color de Tuxtla Gutiérrez</label>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>3. La Ortofoto y el Modelo Digital de Elevaciones (MDE) generados con dron son ejemplos de archivos:</h3>
+                        <label><input type="radio" name="q3" value="a"> Vectoriales</label>
+                        <label><input type="radio" name="q3" value="b"> Ráster</label>
+                        <label><input type="radio" name="q3" value="c"> Tablas de Atributos</label>
+                    </div>
+
+                    <div class="question-block">
+                        <h3>4. En la clase pasada trabajamos con manzanas y curvas de nivel. ¿Qué tipo de geometrías vectoriales representan respectivamente?</h3>
+                        <label><input type="radio" name="q4" value="a"> Puntos y Polígonos</label>
+                        <label><input type="radio" name="q4" value="b"> Polígonos y Líneas</label>
+                        <label><input type="radio" name="q4" value="c"> Líneas y Puntos</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Calificar Repaso</button>
+                </form>
+
+                <div id="quiz-result" class="result-box hidden">
+                    <h2 id="score-text"></h2>
+                    <p id="feedback-text"></p>
+                    <button type="button" id="btn-retry" class="btn-retry">Intentar de nuevo</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Desarrollado para el curso de QGIS - Ingeniería Civil UNACH</p>
+    </footer>
+
+    <script src="js/recap_quiz.js"></script>
+</body>
+</html>
