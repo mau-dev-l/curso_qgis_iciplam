@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 4: Conectividad y Salida Gráfica - QGIS UNACH</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Día 4: Conectividad y Salida Gráfica</h1>
+        <p>Enlace con servicios oficiales y generación de planos para entrega profesional.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="btn-back" style="display: inline-block; margin-bottom: 2rem; color: var(--qgis-green); text-decoration: none; font-weight: bold; border: 1px solid var(--qgis-green); padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;">Volver a la Guía Principal</a>
+
+        <section>
+            <h2 class="section-title">1. Conexión a Servicios Web (XYZ Tiles y WMS)</h2>
+            <p class="section-desc">Un SIG moderno no vive solo de archivos locales. Aprendemos a conectar mapas base y capas oficiales del gobierno mediante estándares internacionales.</p>
+            
+            <div class="grid-2">
+                <div class="card card-info">
+                    <h3 class="card-title-green">XYZ Tiles: Mapas de Referencia</h3>
+                    <p class="mt-1">Permiten traer imágenes de Google Maps, OpenStreetMap o Esri directamente al lienzo de QGIS. Son fundamentales para el contexto visual del proyecto.</p>
+                    
+                    <figure class="demo-image-card mt-1">
+                        <img src="img/dia4_xyz_tiles.png" alt="Captura de conexión XYZ Tiles en QGIS" class="qgis-screenshot-card">
+                        <figcaption>Configuración de servidores de mapas base en el panel Navegador.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title-green">WMS: Datos Oficiales (IDE)</h3>
+                    <p class="mt-1">Las Infraestructuras de Datos Espaciales (IDE) gubernamentales ofrecen servicios WMS (Web Map Service). Esto nos permite consultar cartografía oficial (catastro, riesgos, hidrología) sin necesidad de descargar archivos pesados.</p>
+                    
+                    <figure class="demo-image-card mt-1">
+                        <img src="img/dia4_wms_servicios.png" alt="Captura de servicios WMS en QGIS" class="qgis-screenshot-card">
+                        <figcaption>Conexión a servicios WMS para visualizar datos oficiales del gobierno.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparativa-servicios" style="margin-bottom: 3rem; background-color: #f9fbfa; padding: 2rem; border-radius: 8px; border: 1px solid #e0e0e0;">
+            <h2 class="section-title" style="border: none; padding-bottom: 0;">XYZ Tiles vs. QuickMapServices: ¿Cuál usar?</h2>
+            <p class="section-desc" style="margin-bottom: 2rem;">Aunque ambos sirven para poner un mapa base debajo de nuestro proyecto (como pedir una pizza), la forma en que "llegan" a tu mapa es muy distinta. Aquí la comparativa técnica:</p>
+            
+            <div class="grid-2">
+                <div class="card" style="border-top: 4px solid var(--qgis-green); background-color: var(--white);">
+                    <h3 class="card-title-green">XYZ Tiles (La receta casera)</h3>
+                    <p class="mt-1"><strong>¿Qué es?</strong> Una conexión directa mediante una URL estandarizada. Es el método nativo de QGIS.</p>
+                    <ul class="card-list" style="margin-top: 1rem;">
+                        <li><strong>Control:</strong> Total. Tú decides qué servidor usar.</li>
+                        <li><strong>Estabilidad:</strong> No depende de plugins externos.</li>
+                        <li><strong>Dificultad:</strong> Debes buscar la URL exacta del servidor y configurarla manualmente.</li>
+                    </ul>
+                    <p class="info-text mt-1"><strong>Uso ideal:</strong> Para conexiones privadas o servidores específicos de una dependencia o empresa.</p>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #3498db; background-color: var(--white);">
+                    <h3 class="card-title-green" style="color: #3498db;">QuickMapServices (El menú a domicilio)</h3>
+                    <p class="mt-1"><strong>¿Qué es?</strong> Un plugin (complemento) que actúa como un catálogo automatizado agrupando miles de servidores de la comunidad.</p>
+                    <ul class="card-list" style="margin-top: 1rem;">
+                        <li><strong>Control:</strong> Limitado al catálogo de la comunidad.</li>
+                        <li><strong>Estabilidad:</strong> Depende de que el creador mantenga el plugin actualizado.</li>
+                        <li><strong>Dificultad:</strong> Muy baja. Solo abres el menú, haces clic y listo.</li>
+                    </ul>
+                    <p class="warning-text mt-1" style="background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 4px;"><strong>Tip de Oro:</strong> Al instalarlo, recuerda ir a <em>Settings > More services > Get contributed pack</em> para habilitar los mapas de Google.</p>
+                </div>
+            </div>
+            
+            <figure class="demo-image-full" style="margin-top: 2rem;">
+                <img src="img/dia4_comparativa_servicios.png" alt="Diferencia visual entre XYZ Tiles y QMS en QGIS" class="qgis-screenshot-focused">
+                <figcaption>Izquierda: Configuración manual de XYZ. Derecha: Menú de selección rápida de QuickMapServices.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2 class="section-title">2. Consulta y Diseño del Layout</h2>
+            <p class="section-desc">Antes de imprimir, usamos la herramienta <strong>Identificar</strong> para verificar los atributos finales y luego pasamos al Diseñador de Impresión.</p>
+            
+            <div class="card card-warning">
+                <h3 class="card-title-green">Elementos Esenciales del Plano Profesional</h3>
+                <p class="mt-1">Para que un plano sea aceptado en una dependencia oficial, debe contener los siguientes elementos normativos:</p>
+                <ul class="card-list" style="margin-top: 1rem;">
+                    <li><strong>Grilla de Coordenadas:</strong> Cruces o líneas que indican la posición exacta (usando EPSG:32615 para nuestra zona).</li>
+                    <li><strong>Escala Gráfica y Numérica:</strong> Vital para realizar mediciones sobre el papel.</li>
+                    <li><strong>Flecha de Norte:</strong> Orientación geográfica del levantamiento.</li>
+                    <li><strong>Leyenda:</strong> El diccionario visual que explica cada capa del plano.</li>
+                </ul>
+
+                <figure class="demo-image-card mt-2">
+                    <img src="img/dia4_layout_final.png" alt="Captura del diseño de plano final en QGIS" class="qgis-screenshot-focused">
+                    <figcaption>Integración de elementos normativos en el Diseñador de Impresión.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">3. Exportación Final</h2>
+            <p class="section-desc">El paso final es la exportación. Para ingeniería civil, el estándar es el formato PDF para planos digitales y TIFF de alta resolución (300 DPI) para impresión física.</p>
+            
+            <div style="background-color: var(--white); border-radius: 8px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--qgis-dark); margin-top: 1.5rem;">
+                <p>Recuerda revisar siempre la resolución de salida. Un plano de ingeniería con baja resolución puede ocultar detalles críticos de las curvas de nivel o la simbología técnica.</p>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
+            <p style="margin-bottom: 2rem; font-size: 1.2rem; font-weight: bold; color: var(--qgis-dark);">¡Has completado el curso de QGIS para Ingeniería Civil!</p>
+            <a href="ejercicios.html" class="btn-submit" style="text-decoration: none; display: inline-block; width: auto; background-color: var(--qgis-green); color: var(--white); padding: 1rem 2rem; border-radius: 4px; font-weight: bold;">Acceder a los Datos del Proyecto Final</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>ICIPLAM - Facultad de Ingeniería UNACH - Clausura 2026</p>
+    </footer>
+
+</body>
+</html>
